@@ -1,14 +1,11 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
     public float Speed = 1f;
     
-    private Vector3 _forward = Vector3.forward;
-    private Vector3 _left = Vector3.left;
+    private Vector3 _forward = Vector3.right;
+    private Vector3 _left = Vector3.forward;
     
     private enum Direction
     {
@@ -20,8 +17,7 @@ public class PlayerController : MonoBehaviour
     {
         if (_currentDirection == Direction.Forward)
             return _forward;
-        else
-            return _left;
+        return _left;
     }
 
     private Direction _currentDirection = Direction.Forward;
